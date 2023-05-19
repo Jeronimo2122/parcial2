@@ -1,0 +1,54 @@
+<head>
+  <title>Barra de Título</title>
+  <style>
+    /* Estilos para la barra de título */
+    header {
+      background-color:  #120E2F;
+      color: #fff;
+      padding: 40px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="text-center">
+      <img src="assets/logo.jpg" alt="logo" width="200" height="200">
+    </div>
+
+
+  </header>
+
+<div *ngIf="selected">
+    <app-recurso-detail [recursoDetail]="selectedRecurso"></app-recurso-detail>
+</div>
+<div>
+  <hr />
+  <p> **La calificacion promedio es de {{ (promedioCal) }} con un registro de {{ numOpiniones }}**</p>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4 mb-2" *ngFor="let recurso of recursos">
+          <div class="card p-2" style="width: 20rem; height: 28rem">
+              <h5 class="card-title">{{ recurso.nombre }}</h5>
+              <img
+                class="card-text"
+                alt="{{ recurso.nombre }}"
+                src="{{ recurso.imagen }}"
+                (click)="onSelected(recurso)"
+              />
+              <div class="card-body">
+                <p class="card-text">Calificacion: {{ recurso.estrellas }} de {{recurso.cantidadOpiniones}} Opiniones</p>
+                  <p class="card-text">Duracion: {{ recurso.duracion }} | Dificultad: {{recurso.dificultad}}</p>
+                  <p class="card-text">Por: {{ recurso.autorReceta }}</p>
+                  <button class="btn btn-primary" style="background-color: #F16194; text-align: center; border-color: #fff;" (click)="onSelected(recurso)">Go somewhere</button>
+              </div>
+           </div>
+      </div>
+   </div>
+
+</div>

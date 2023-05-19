@@ -1,0 +1,31 @@
+<div class="container-fluid" style="align-content: center;">
+  <p class="h3 p-3">{{ recursoDetail.nombre }}</p>
+  <div class="row">
+    <div class="col-5">
+      <div class="thumb">
+        <img
+          class="img-fluid"
+          src="{{ recursoDetail.imagen }}"
+          alt="{{ recursoDetail.nombre }}"
+        />
+        <p class="caption">Estrellas: {{ recursoDetail.estrellas }} | Cantidad de Opiniones: {{recursoDetail.cantidadOpiniones}}</p>
+      </div>
+    </div>
+    <div class="col">
+      <dl>
+        <dt>Descripcion:</dt>
+        <dd>{{ recursoDetail.descripcion }}</dd>
+
+        <dt>Ingredientes:</dt>
+        <dd>{{ recursoDetail.ingredientes}}</dd>
+
+        <dt class="bold">Autor de la receta:</dt>
+        <dd class="caption">{{ recursoDetail.autorReceta }}</dd>
+
+        <dt class="bold">Más info</dt>
+        <dd>Dificultad: {{ recursoDetail.dificultad }} | Duración: {{recursoDetail.duracion }} </dd>
+      </dl>
+    </div>
+  </div>
+ </div>
+
